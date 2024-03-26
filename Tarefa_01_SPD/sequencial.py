@@ -11,7 +11,7 @@ def main():
         listaString = "".join(linhas)
         # Remoção de espaços em branco do início e do final da string
         conteudo = listaString.strip()
-        # Divisão do conteúdo em palavras utilizando expressão regular para encontrar espaços em branco
+        # Divisão do conteúdo em palavras utilizando expressão regular para encontrar espaços em branco (\s : corresponde a qualquer caractere de espaço em branco em Python, incluindo espaço, tabulação (\t), quebra de linha (\n), retorno de carro (\r), entre outros.  )
         palavras = re.split(r'\s+', conteudo)
 
         # Contagem do número de palavras

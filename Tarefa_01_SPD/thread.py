@@ -21,13 +21,13 @@ def worker(params):
 
 # Função para executar as threads
 def exec(vetor):
-    threads = []
+    threads = [] # Inicializando uma lista vazia
 
     # Criando e iniciando as threads
     for i in range(len(vetor)):
         params = (i, vetor)
         t = threading.Thread(target=worker, args=(params,))
-        threads.append(t)
+        threads.append(t) # Adicionando o elemento à lista. Util para adicionar elementos dinamicamente a uma lista conforme necessário durante a execução do programa.
         t.start()
 
     # Ponto de sincronização: aguardando o término de todas as threads
@@ -38,8 +38,8 @@ def exec(vetor):
 def divideVetor(lista, n):
     vetorFinal = []
     tamanhoLista = len(lista)
-    tamanhoDeCadaPedaco = tamanhoLista // n
-    elementosExtras = tamanhoLista % n
+    tamanhoDeCadaPedaco = tamanhoLista // n  #divisão inteira
+    elementosExtras = tamanhoLista % n # resto da divisao
 
     inicio = 0
     for i in range(n):
@@ -55,7 +55,7 @@ def divideVetor(lista, n):
 # Função principal do programa
 def main():
     # Abertura do arquivo "hamlet.txt" para leitura, especificando o encoding como UTF-8
-    with open("Atividade Avaliativa 1/hamlet.txt", "r", encoding="utf-8") as arquivo:
+    with open("F:\Área de Trabalho\SIstemas paralelos e distribuidos\Tarefa_SPD_01\Tarefa_01_SPD\hamlet.txt", "r", encoding="utf-8") as arquivo:
         # Leitura do conteúdo do arquivo e divisão em linhas
         linhas = arquivo.readlines()
 
